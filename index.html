@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba de Usabilidad</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("src/fondo.jpg"); /* Cambia esta URL a la de tu imagen de fondo */
+        background-size: cover;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+      .container {
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        margin-top: 100px;
+        margin-left: 350px;
+        border-radius: 10px;
+        max-width: 600px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 10px;
+      }
+      ol {
+        margin-left: 20px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="step1">
+      <h1>Bienvenido y gracias por participar en esta evaluación</h1>
+      <p>
+        SportReserve, aplicación para reserva de canchas y equipamiento
+        deportivo.
+      </p>
+      <button onclick="nextStep('step2')">Continuar</button>
+    </div>
+
+    <div class="container" id="step2" style="display: none">
+      <h2>¿Nos permites grabar tu participación?</h2>
+      <p>
+        Las grabaciones se utilizarán únicamente para analizar y mejorar el
+        diseño de la aplicación y se mantendrán confidenciales.
+      </p>
+      <form id="consentForm">
+        <label>
+          <input type="checkbox" required />
+          Acepto ser grabado durante esta prueba </label
+        ><br />
+        <button type="submit">Enviar consentimiento</button>
+      </form>
+      <a
+        onclick="nextStep('consent')"
+        target="_blank"
+        style="text-decoration: underline; cursor: pointer"
+        >Leer consentimiento Informado</a
+      >
+    </div>
+    <div class="container" id="consent" style="display: none">
+      <h2>Consentimiento Informado</h2>
+      <p style="text-align: left">
+        Descripción: Estamos realizando una evaluación de usabilidad para
+        mejorar el diseño de nuestra aplicación de reserva de instalaciones y
+        equipamiento deportivo. Tu participación es muy valiosa para nosotros. A
+        continuación, te pedimos tu consentimiento para proceder con la
+        evaluación.
+      </p>
+      <ol>
+        <li>
+          <strong>Participación Voluntaria:</strong>
+          Entiendo que mi participación en la evaluación de usabilidad del
+          prototipo es completamente voluntaria. No estoy obligado a participar
+          y puedo retirarme en cualquier momento sin ninguna penalización.
+          Acepto que mi participación es voluntaria y que puedo retirarme en
+          cualquier momento.
+        </li>
+        <li>
+          <strong>Grabación de la Sesión:</strong>
+          Entiendo que la sesión de evaluación será grabada para propósitos de
+          análisis. Las grabaciones capturarán tanto mi interacción con el
+          prototipo como mis comentarios durante la prueba. Acepto que mi
+          participación será grabada durante la evaluación.
+        </li>
+        <li>
+          <strong>Uso de la Información:</strong>
+          Reconozco que la información obtenida durante la evaluación, incluidas
+          las grabaciones y mis comentarios, será utilizada únicamente para
+          analizar y mejorar el diseño de la aplicación. Esta información será
+          mantenida confidencial y solo será accesible para el equipo de
+          desarrollo. Acepto que la información obtenida será utilizada
+          únicamente para analizar y mejorar el diseño de la aplicación y que se
+          mantendrá confidencial.
+        </li>
+      </ol>
+      <p>
+        <strong>Consentimiento:</strong>
+        Acepto y estoy de acuerdo en participar en la evaluación bajo los
+        términos descritos.
+      </p>
+      <button onclick="nextStep('step2')">Regresar a formulario</button>
+    </div>
+
+    <div class="container" id="step3" style="display: none">
+      <h2>Contexto de la Prueba</h2>
+      <img src="src/SportReserve.png" />
+      <p>¿Qué tan fácil es para el usuario utilizar SportReserve?</p>
+      <button onclick="nextStep('step4')">Empezar Prueba</button>
+    </div>
+
+    <div class="container" id="step4" style="display: none">
+      <h2>Tarea 1: Reserva de una cancha</h2>
+      <img src="src/SportReserve.png" />
+      <h3>
+        Reservar la cancha “P. Carolina” en el horario de 11:00 a 12:00 y
+        acceder al comprobante de la reserva.
+      </h3>
+      <p>
+        <strong>Pensar en voz alta:</strong> Por favor, describe tus
+        pensamientos en voz alta mientras completas las tareas.
+      </p>
+      <iframe
+        style="border: 1px solid rgba(0, 0, 0, 0.1)"
+        width="375"
+        height="750"
+        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FVIKe4ejuJD6QjDyae34UUr%2FApp-Reservas---HCI%3Fnode-id%3D124-6551%26t%3Dbo5cAC4oYTCRKVzF-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D106%253A699%26starting-point-node-id%3D106%253A740%26hide-ui%3D1"
+        allowfullscreen
+      ></iframe>
+      <p></p>
+      <button onclick="nextStep('step5')">Siguiente tarea</button>
+    </div>
+
+    <div class="container" id="step5" style="display: none">
+      <h2>Tarea 2: Reserva de una cancha con tiempo adicional</h2>
+      <img src="src/SportReserve.png" />
+      <h3>
+        Reservar la cancha “Juan” en el horario de 11:00 a 12:00, solicitando
+        una hora adicional al tiempo de la reserva, efectuar el pago y acceder
+        al comprobante de la reserva.
+      </h3>
+      <p>
+        <strong>Pensar en voz alta:</strong> Por favor, describe tus
+        pensamientos en voz alta mientras completas las tareas.
+      </p>
+      <iframe
+        style="border: 1px solid rgba(0, 0, 0, 0.1)"
+        width="375"
+        height="750"
+        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FVIKe4ejuJD6QjDyae34UUr%2FApp-Reservas---HCI%3Fnode-id%3D124-6551%26t%3Dbo5cAC4oYTCRKVzF-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D106%253A699%26starting-point-node-id%3D106%253A740%26hide-ui%3D1"
+        allowfullscreen
+      ></iframe>
+      <p></p>
+      <button onclick="nextStep('step6')">Siguiente tarea</button>
+    </div>
+
+    <div class="container" id="step6" style="display: none">
+      <h2>Tarea 3: Reserva de equipamiento deportivo</h2>
+      <img src="src/SportReserve.png" />
+      <h3>
+        Reservar patines de 11:00 a 12:00, efectuar el pago y acceder al
+        comprobante de la reserva.
+      </h3>
+      <p>
+        <strong>Pensar en voz alta:</strong> Por favor, describe tus
+        pensamientos en voz alta mientras completas las tareas.
+      </p>
+      <iframe
+        style="border: 1px solid rgba(0, 0, 0, 0.1)"
+        width="375"
+        height="750"
+        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FVIKe4ejuJD6QjDyae34UUr%2FApp-Reservas---HCI%3Fnode-id%3D124-6551%26t%3Dbo5cAC4oYTCRKVzF-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D106%253A699%26starting-point-node-id%3D106%253A740%26hide-ui%3D1"
+        allowfullscreen
+      ></iframe>
+      <p></p>
+      <button onclick="nextStep('step7')">Siguiente tarea</button>
+    </div>
+
+    <div class="container" id="step7" style="display: none">
+      <h2>Encuesta Post-Evaluación</h2>
+      <form id="surveyForm">
+        <p>
+          ¿Qué partes de la aplicación encontraste más intuitivas o fáciles de
+          usar?
+        </p>
+
+        <p>¿Hubo alguna parte del proceso que te resultó confusa o difícil?</p>
+
+        <p>¿Cómo calificarías tu experiencia general con la aplicación?</p>
+
+        <p>
+          ¿Qué sugerencias tienes para mejorar la usabilidad de la aplicación?
+        </p>
+
+        <p>
+          ¿Hubo algo en particular que te gustó o te disgustó durante la prueba?
+        </p>
+
+        <p>¿Hay alguna funcionalidad que sientas que falta en la aplicación?</p>
+
+        <button type="submit">Finalizar</button>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("consentForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          nextStep("step3");
+        });
+
+      document
+        .getElementById("surveyForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          alert(
+            "Gracias por completar la encuesta. ¡Tu feedback es muy valioso!"
+          );
+        });
+
+      function nextStep(stepId) {
+        document.querySelectorAll(".container").forEach(function (step) {
+          step.style.display = "none";
+        });
+        document.getElementById(stepId).style.display = "block";
+        window.scrollTo(0, 0);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        nextStep("step1");
+      });
+    </script>
+  </body>
+</html>
